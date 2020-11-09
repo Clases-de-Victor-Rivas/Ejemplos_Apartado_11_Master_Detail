@@ -6,8 +6,6 @@ import androidx.core.widget.NestedScrollView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -104,8 +102,8 @@ class ItemListActivity : AppCompatActivity() {
         override fun getItemCount() = values.size
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            val idView: TextView = view.findViewById(R.id.id_text)
-            val contentView: TextView = view.findViewById(R.id.content)
+            val idView: TextView = view.findViewById(R.id.tv_item_list_content_id)
+            val contentView: TextView = view.findViewById(R.id.tv_item_list_content_matricula)
         }
     }
 }
