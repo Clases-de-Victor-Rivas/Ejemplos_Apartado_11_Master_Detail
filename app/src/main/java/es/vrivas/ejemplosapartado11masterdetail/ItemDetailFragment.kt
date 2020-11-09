@@ -6,6 +6,7 @@ import com.google.android.material.appbar.CollapsingToolbarLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import es.vrivas.ejemplosapartado11masterdetail.data.VehiculoContent
 /**
@@ -30,7 +31,7 @@ class ItemDetailFragment : Fragment() {
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
                 item = VehiculoContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]
-                activity?.findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout)?.title = item?.id + " / " + item?.matricula
+                activity?.findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout)?.title = item?.id
             }
         }
     }
@@ -41,7 +42,10 @@ class ItemDetailFragment : Fragment() {
 
         // Show the Vehiculo content as text in a TextView.
         item?.let {
-            rootView.findViewById<TextView>(R.id.item_detail).text = it.id + " / " + it.matricula
+            rootView.findViewById<ImageView>(R.id.img_icono).setImageResource(it.icono)
+            rootView.findViewById<TextView>(R.id.tv_matricula).text = it.matricula
+            rootView.findViewById<TextView>(R.id.tv_marca).text = it.marca
+
         }
 
         return rootView
